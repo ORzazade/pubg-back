@@ -1,0 +1,13 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "a.com.ITPromotion.pubgheatmap",
+                "paths": [
+                    "/invitation/*"
+                ]
+            }
+        ]
+    }
+}
