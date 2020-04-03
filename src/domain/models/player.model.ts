@@ -1,4 +1,5 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { MatchPlayer } from './matchPlayer.model';
 
 @Entity()
 @Index(['id', 'shard_id'], { unique: true })
@@ -17,6 +18,9 @@ export class Player {
 
     @Column({ default: 1 })
     num_fetches: number;
+
+    // @OneToMany(type => MatchPlayer, matchPlayer => matchPlayer.player)
+    // matches?: [MatchPlayer];
 
     @Column({ type: 'timestamp with time zone' })
     last_fetched_at: Date;

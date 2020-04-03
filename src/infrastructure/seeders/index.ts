@@ -1,1 +1,1 @@
-export * from './users.seeder';
+export * from './playerFetchIntervals.seeder';

@@ -19,7 +19,7 @@
     "lint:fix": "yarn lint --fix",
     "typeorm": "ts-node ./node_modules/.bin/typeorm",
     "typeorm-win": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js",
-    "migration:generate": "yarn typeorm-win migration:generate --config postgres-ormconfig.js -n",
+    "migration:generate": "yarn typeorm-win migration:generate --config postgres-ormconfig.js -n ",
     "migration:run": "yarn typeorm-win migration:run --config postgres-ormconfig.js",
     "migrate:main": "yarn typeorm migration:run --config postgres-ormconfig.js"
   },

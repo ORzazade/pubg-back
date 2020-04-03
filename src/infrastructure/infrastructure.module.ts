@@ -3,8 +3,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as path from 'path';
 import { DbContext } from './dbContext';
 import { PlayersRepository } from './repositories/player.repository';
-import { UsersSeeder } from './seeders';
+import { PlayerFetchIntervalsSeeder } from './seeders';
 import { SeederService } from './services/seeder.service';
+import { MatchesRepository } from './repositories/match.repository';
+import { MatchPlayersRepository } from './repositories/matchPlayer.repository';
+import { PlayerFetchIntervalsRepository } from './repositories/playerFetchInterval.repository';
 
 @Module({
     imports: [
@@ -14,8 +17,8 @@ import { SeederService } from './services/seeder.service';
             host: process.env.POSTGRES_URL || 'localhost',
             username: 'postgres',
             password: 'Rzazade0',
-            database: 'pubgheatmap',
-            synchronize: false,
+            database: 'pub',
+            synchronize: true,
             logging: false,
             migrationsRun: true,
             entities: [path.join(__dirname, '..', 'domain/models/*.model.{ts,js}')],
@@ -24,12 +27,14 @@ import { SeederService } from './services/seeder.service';
         TypeOrmModule.forFeature(
             [
                 PlayersRepository,
-
+                MatchesRepository,
+                MatchPlayersRepository,
+                PlayerFetchIntervalsRepository
             ],
             'default',
         ),
     ],
-    providers: [DbContext, UsersSeeder, SeederService],
+    providers: [DbContext, PlayerFetchIntervalsSeeder, SeederService],
     exports: [DbContext, SeederService],
 })
 export class InfrastructureModule { }

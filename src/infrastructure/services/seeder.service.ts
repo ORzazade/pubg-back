@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import {  UsersSeeder } from '../seeders';
+import {  PlayerFetchIntervalsSeeder } from '../seeders';
 
 @Injectable()
 export class SeederService {
-    constructor(private readonly usersSeeder: UsersSeeder) {}
+    constructor(private readonly playerFetchIntervalsSeeder: PlayerFetchIntervalsSeeder) {}
 
     async runSeedsAsync() {
-        await this.usersSeeder.run();
+        await this.playerFetchIntervalsSeeder.run();
     }
 }
