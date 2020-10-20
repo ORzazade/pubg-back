@@ -32,7 +32,7 @@
     "@nestjs/platform-fastify": "^7.0.7",
     "@nestjs/typeorm": "^7.0.0",
     "apollo-server-core": "^2.14.2",
-    "apollo-server-fastify": "^2.11.0",
+    "apollo-server-fastify": "^2.14.2",
     "class-validator": "^0.11.1",
     "fastify-static": "^2.6.0",
     "graphql": "^14.6.0",
