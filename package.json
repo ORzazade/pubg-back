@@ -45,7 +45,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
     "type-graphql": "^0.17.6",
-    "typeorm": "^0.2.24",
+    "typeorm": "^0.2.25",
     "typeorm-transactional-cls-hooked": "^0.1.12",
     "winston": "^3.2.1"
   },
